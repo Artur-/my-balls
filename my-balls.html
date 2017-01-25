@@ -16,19 +16,18 @@
         display: block;
       }
     </style>
-    <?xml version="1.0" encoding="UTF-8"?>
-<svg id="svg" width="544px" height="477px" viewBox="0 0 544 477" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="544px" height="477px" viewBox="0 0 544 477" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
     <title>balls</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <circle id="button1" stroke="#979797" fill="#D0011B" cx="111.5" cy="362.5" r="77.5"></circle>
-        <circle id="button2" stroke="#979797" fill="#417505" cx="281.5" cy="207.5" r="77.5"></circle>
-        <circle id="button3" stroke="#979797" fill="#4990E2" cx="436.5" cy="102.5" r="77.5"></circle>
+        <circle id="red" stroke="#979797" fill="#D0011B" cx="109" cy="360" r="75"></circle>
+        <circle id="green" stroke="#979797" fill="#417505" cx="279" cy="205" r="75"></circle>
+        <circle id="blue" stroke="#979797" fill="#4990E2" cx="434" cy="100" r="75"></circle>
     </g>
-</svg>
- </template>
+</svg> </template>
 
   <script>
     Polymer({
@@ -36,8 +35,8 @@
       is: 'my-balls',
       ready: function() {
         var self=this;
-        var draw = SVG("svg");
-        var ids = ["button1","button2","button3"];
+        var draw = SVG(this.children[0]);
+        var ids = Object.keys(this.$);
         ids.forEach(function(id) {
           self.$[id].addEventListener("mouseover", function() {
             SVG.get(id).animate(500, 'elastic').size(170);
