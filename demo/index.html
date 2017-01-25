@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>my-balls demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../my-balls.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+    <script>
+     var load = function() {
+       balls.addEventListener("button1-click", function() {
+         window.alert("red");
+       });
+       balls.addEventListener("button2-click", function() {
+         window.alert("green");
+       });
+       balls.addEventListener("button3-click", function() {
+         window.alert("blue");
+       });
+     }
+    </script>
+  </head>
+  <body onload="load()">
+    <div class="vertical-section-container centered">
+      <h3>Basic my-balls demo</h3>
+          <my-balls id="balls"></my-balls>
+    </div>
+  </body>
+</html>
